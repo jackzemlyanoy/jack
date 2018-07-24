@@ -1,4 +1,5 @@
 import React,{Component} from 'react';
+import ComentsList from './ComentsList';
 
 export default class Article extends Component{
     constructor(props){
@@ -22,7 +23,12 @@ export default class Article extends Component{
         getBody(){
             if(!this.state.isOpen)return null;
             const {article} = this.props;
-            return <section>{article.text}</section>
+            return (
+                <section>
+                    {article.text}
+                    <ComentsList comments = {article.comments}/>
+                </section>
+            )
         }
 
     toggleOpen = () => {
@@ -31,13 +37,3 @@ export default class Article extends Component{
         })
     }
 }
-
-// export default function Article(props) {
-//     const {article} = props;
-//     return(
-//         <div>
-//             <h3>{article.title}</h3>
-//             <section>{article.text}</section>
-//         </div>
-//     )
-// }
