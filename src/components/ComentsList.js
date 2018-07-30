@@ -27,7 +27,7 @@ function ComentsList({comments=[], isOpen, toggleOpen}){
 }
 
 ComentsList.propTypes = {
-    comments: PropTypes.object.isRequired
+    comments: PropTypes.array.isRequired
 }
 
 export default toggleOpen(ComentsList)

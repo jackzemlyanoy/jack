@@ -23,7 +23,12 @@ class Article extends Component{
                 <button onClick={toggleOpen}>
                     {isOpen ? 'close' : 'open'}
                 </button>
+                <ReactCSSTransitionGroup
+                    transitionName="example"
+                    transitionEnterTimeout={500}
+                    transitionLeaveTimeout={300}>
                 {this.getBody()}
+                </ReactCSSTransitionGroup>
             </div>
         )}
         getBody(){
