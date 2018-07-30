@@ -1,7 +1,9 @@
 import React,{Component} from 'react';
 import PropTypes from 'prop-types';
+import './articlestyle.css';
+import { CSSTransitionGroup } from 'react-transition-group'
 import ComentsList from './ComentsList';
-import toggleOpen from './decorators/toggleOpen';
+// import toggleOpen from './decorators/toggleOpen';
 
 class Article extends Component{
 
@@ -23,12 +25,12 @@ class Article extends Component{
                 <button onClick={toggleOpen}>
                     {isOpen ? 'close' : 'open'}
                 </button>
-                <ReactCSSTransitionGroup
-                    transitionName="example"
-                    transitionEnterTimeout={500}
+                <CSSTransitionGroup
+                    transitionName='article'
+                    transitionEnterTimeout={300}
                     transitionLeaveTimeout={300}>
-                {this.getBody()}
-                </ReactCSSTransitionGroup>
+                        {this.getBody()}
+                </CSSTransitionGroup>
             </div>
         )}
         getBody(){
